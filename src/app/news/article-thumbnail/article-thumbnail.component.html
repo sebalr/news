@@ -1,6 +1,13 @@
-<article class="container">
-  <img [ngSrc]="article?.urlToImage ?? DEFAULT_IMAGE" fill />
-  <section>
-    {{ article?.content }}
+<article *ngIf="article" class="container">
+  <img
+    alt="background article image"
+    [ngSrc]="article.urlToImage ?? DEFAULT_IMAGE"
+    fill
+  />
+  <section class="body">
+    <h3 class="title">{{ article.title }}</h3>
+    <p class="description">
+      {{ article.description ?? article.content }}
+    </p>
   </section>
 </article>

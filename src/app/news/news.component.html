@@ -1,1 +1,8 @@
-<p>news works!</p>
+<ng-container *ngIf="articles$ | async as articles">
+  <div class="news-grid">
+    <app-article-thumbnail
+      *ngFor="let article of articles"
+      [article]="article"
+    />
+  </div>
+</ng-container>

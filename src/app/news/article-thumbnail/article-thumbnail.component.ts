@@ -14,5 +14,5 @@ import { NgOptimizedImage } from '@angular/common'
 export class ArticleThumbnailComponent {
   @Input({ required: true }) public article: Article | null = null;
 
-  public readonly DEFAULT_IMAGE = 'assets/images/news-placeholder.png';
+  public readonly DEFAULT_IMAGE = '/assets/images/news_placeholder.png';
 }

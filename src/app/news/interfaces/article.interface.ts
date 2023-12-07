@@ -5,7 +5,7 @@ export interface Source {
 
 export interface Article {
   source: Source;
-  author: string;
+  author: string | null;
   title: string;
   description: string | null;
   url: string;

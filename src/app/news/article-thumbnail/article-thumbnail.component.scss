@@ -1,9 +1,58 @@
+@use "src/assets/styles/colors";
+
+article {
+  border-radius: 24px;
+  background-color: white;
+}
+
 .container {
   display: flex;
   flex-direction: column;
   position: relative;
+  height: 400px;
+  background-color: colors.$primary--transparent;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
 img {
   object-fit: cover;
+  mix-blend-mode: multiply;
+  border-radius: 24px;
+  padding: 4px;
+}
+
+.body {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 50%;
+  z-index: 2;
+  padding: 0.5rem 1rem 1rem 1rem;
+  background-color: white;
+  border-radius: 24px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.description {
+  &:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 1rem;
+    display: block;
+    background-color: white;
+  }
+  word-break: break-all;
+}
+
+.title {
+  font-weight: 600;
+  font-size: large;
+  margin-bottom: 1rem;
 }

@@ -5,3 +5,7 @@ export interface ApiResponse {
   totalResults: number;
   articles: Article[];
 }
+
+export interface Filters {
+  q: string;
+}
