@@ -1,0 +1,9 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+img {
+  object-fit: cover;
+}
