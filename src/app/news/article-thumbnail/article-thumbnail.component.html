@@ -5,7 +5,10 @@
     fill
   />
   <section class="body">
-    <h3 class="title">{{ article.title }}</h3>
+    <div>
+      <app-pill class="author" [text]="article.author ?? 'Anonymous'" />
+      <h3 class="title">{{ article.title }}</h3>
+    </div>
     <p class="description">
       {{ article.description ?? article.content }}
     </p>

@@ -1,0 +1,16 @@
+@use "src/assets/styles/colors";
+
+.pill {
+  border-radius: 2rem;
+  padding: 4px 8px;
+  color: white;
+  width: fit-content;
+}
+
+.primary {
+  background-color: colors.$primary;
+}
+
+.secondary {
+  background-color: colors.$secondary;
+}
