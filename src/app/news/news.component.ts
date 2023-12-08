@@ -20,7 +20,7 @@ export class NewsComponent implements OnInit {
   constructor(private newsService: NewsService) { }
 
   public ngOnInit(): void {
-    this.articles$ = this.newsService.getNews(null);
+    this.articles$ = this.newsService.articles$;
   }
 
 }
