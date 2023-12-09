@@ -1,8 +1,16 @@
-<ng-container *ngIf="articles$ | async as articles">
-  <div class="news-grid">
+<ng-container
+  *ngIf="{ articles: articles$ | async, error: articlesError$ | async } as data"
+>
+  <div *ngIf="data.articles; else loading" class="news-grid">
     <app-article-thumbnail
-      *ngFor="let article of articles"
+      *ngFor="let article of data.articles"
       [article]="article"
     />
   </div>
+  <ng-template #loading>
+    <div *ngIf="!data.error">Loading</div>
+    <div *ngIf="data.error">
+      {{ data.error }}
+    </div>
+  </ng-template>
 </ng-container>

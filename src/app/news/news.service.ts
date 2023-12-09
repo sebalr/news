@@ -23,9 +23,9 @@ export class NewsService {
           return response.articles;
         }
 
-        throw new Error(response.message)
+        throw new Error(response.message ?? 'Invalid response')
       }),
-      shareReplay(1)
+      shareReplay(1),
     );
   }
 
