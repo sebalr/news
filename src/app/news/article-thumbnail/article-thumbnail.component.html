@@ -1,9 +1,11 @@
 <article *ngIf="article" class="container">
-  <img
-    alt="background article image"
-    [ngSrc]="article.urlToImage ?? DEFAULT_IMAGE"
-    fill
-  />
+  <section class="image">
+    <img
+      alt="background article image"
+      [ngSrc]="article.urlToImage ?? DEFAULT_IMAGE"
+      fill
+    />
+  </section>
   <section class="body">
     <div>
       <app-pill class="author" [text]="article.author ?? 'Anonymous'" />
