@@ -1,0 +1,7 @@
+@use "src/assets/styles/colors";
+
+h1 {
+  font-weight: 600;
+  font-size: large;
+  color: colors.$primary;
+}

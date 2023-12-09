@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, signal } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable, Subject, map, shareReplay, startWith, switchMap } from 'rxjs';
 import { ApiResponse, Filters } from 'src/app/news/interfaces/api.interface';
 import { Article } from 'src/app/news/interfaces/article.interface';
@@ -8,13 +9,21 @@ import { Article } from 'src/app/news/interfaces/article.interface';
   providedIn: 'root'
 })
 export class NewsService {
-  public articles$!: Observable<Article[]>;
+  public articles$!: Observable<Article[]>
+
+  private selectedArticle = signal<Article | null>(null);
+  public $selectedArticle = this.selectedArticle.asReadonly();
 
   private filters = new Subject<Filters | null>();
   private currentFilters: Filters | null = null;
 
-  constructor(private httpClient: HttpClient) {
+  constructor(private httpClient: HttpClient, private router: Router) {
     this.initArticles();
+  }
+
+  public openDetail(article: Article): void {
+    this.selectedArticle.set(article);
+    this.router.navigate(['detail']);
   }
 
   private initArticles() {

@@ -4,6 +4,7 @@ import { NewsService } from 'src/app/news/news.service';
 import { Observable, catchError, ignoreElements, of } from 'rxjs';
 import { Article } from 'src/app/news/interfaces/article.interface';
 import { ArticleThumbnailComponent } from 'src/app/news/article-thumbnail/article-thumbnail.component';
+import { HeaderService } from 'src/app/core/header/header.service';
 
 @Component({
   selector: 'app-news',
@@ -18,11 +19,12 @@ export class NewsComponent implements OnInit {
   public articlesError$: Observable<string> | undefined;
   public errorMessage: undefined | string;
 
-  constructor(private newsService: NewsService) { }
+  constructor(private newsService: NewsService, private headerService: HeaderService) { }
 
   public ngOnInit(): void {
     this.articles$ = this.newsService.articles$;
     this.articlesError$ = this.newsService.articles$.pipe(ignoreElements(), catchError((error) => of(error.error?.message ?? 'Error retrieving articles')));
+    this.headerService.setFiltersBarMode();
   }
 
 }
