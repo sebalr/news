@@ -8,7 +8,9 @@
   </section>
   <section class="body">
     <div>
-      <app-pill class="author" [text]="article.author ?? 'Anonymous'" />
+      <h4 class="author">
+        {{ article.author ?? "Anonymous" }}
+      </h4>
       <h3 class="title">{{ article.title }}</h3>
     </div>
     <p class="description">

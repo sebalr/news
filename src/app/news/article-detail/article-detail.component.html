@@ -1,1 +1,23 @@
-<p>article-detail works!</p>
+<ng-container *ngIf="newsService.$selectedArticle(); else errorMessage">
+  <article>
+    <section class="image">
+      <img
+        alt="background article image"
+        [ngSrc]="newsService.$selectedArticle()!.urlToImage ?? DEFAULT_IMAGE"
+        fill
+      />
+    </section>
+    <section class="body">
+      <div>
+        <h4 class="author">
+          {{ newsService.$selectedArticle()!.author ?? "Anonymous" }}
+        </h4>
+        <h3 class="title">{{ newsService.$selectedArticle()!.title }}</h3>
+      </div>
+      <p class="description">
+        {{ newsService.$selectedArticle()!.description ?? "..." }}
+      </p>
+    </section>
+  </article>
+</ng-container>
+<ng-template #errorMessage> Missing article, please go back </ng-template>
