@@ -8,24 +8,31 @@ import { Article } from 'src/app/news/interfaces/article.interface';
   providedIn: 'root'
 })
 export class NewsService {
-  public articles$: Observable<Article[]>;
+  public articles$!: Observable<Article[]>;
 
   private filters = new Subject<Filters | null>();
+  private currentFilters: Filters | null = null;
 
   constructor(private httpClient: HttpClient) {
+    this.initArticles();
+  }
+
+  private initArticles() {
     this.articles$ = this.filters.pipe(
       startWith(null),
-      switchMap((filters) =>
-        this.httpClient.get<ApiResponse>('https://newsapi.org/v2/everything?sources=google-news-ar,infobae,la-gaceta&pageSize=50')
-      ),
+      switchMap((filters) => {
+        const newFilters = this.currentFilters ? { ...this.currentFilters, ...filters } : filters;
+        this.currentFilters = newFilters;
+        return this.httpClient.get<ApiResponse>(`https://newsapi.org/v2/everything?sources=google-news-ar,infobae,la-gaceta&pageSize=50&q=${newFilters?.q ?? ''}`);
+      }),
       map((response) => {
         if (response.status === 'ok') {
           return response.articles;
         }
 
-        throw new Error(response.message ?? 'Invalid response')
+        throw new Error(response.message ?? 'Invalid response');
       }),
-      shareReplay(1),
+      shareReplay(1)
     );
   }
 

@@ -22,7 +22,7 @@ export class NewsComponent implements OnInit {
 
   public ngOnInit(): void {
     this.articles$ = this.newsService.articles$;
-    this.articlesError$ = this.newsService.articles$.pipe(ignoreElements(), catchError((error) => of(error.error?.message ?? 'Error retrieving articles')))
+    this.articlesError$ = this.newsService.articles$.pipe(ignoreElements(), catchError((error) => of(error.error?.message ?? 'Error retrieving articles')));
   }
 
 }
