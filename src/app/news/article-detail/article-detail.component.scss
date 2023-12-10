@@ -1,3 +1,48 @@
-.image {
+@use "src/assets/styles/colors";
+
+:host {
+  display: flex;
+  justify-content: center;
+}
+
+.detail-container {
+  width: clamp(350px, 100%, 1200px);
+  background-color: colors.$primary--transparent;
+  border-radius: 1.5rem;
+}
+
+article {
+  padding: 1rem;
+}
+
+.img-container {
   position: relative;
+  height: 20rem;
+}
+
+img {
+  object-fit: contain;
+  mix-blend-mode: multiply;
+  border-radius: 1.5rem;
+}
+
+.body {
+  min-height: 10rem;
+  transform: translateY(3rem);
+  background-color: white;
+  padding: 1rem;
+  border-radius: 1.5rem;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.author {
+  margin: 1rem 0;
+  text-decoration: underline;
+  text-decoration-color: colors.$primary;
+}
+
+.title {
+  font-weight: 600;
+  font-size: large;
+  color: colors.$primary;
 }

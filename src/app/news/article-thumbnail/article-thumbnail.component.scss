@@ -1,7 +1,7 @@
 @use "src/assets/styles/colors";
 
 article {
-  border-radius: 24px;
+  border-radius: 1.5rem;
   background-color: white;
   cursor: pointer;
 }
@@ -14,7 +14,7 @@ article {
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
-.image {
+.img-container {
   position: relative;
   height: 40%;
 }
@@ -22,8 +22,8 @@ article {
 img {
   object-fit: contain;
   mix-blend-mode: multiply;
-  border-radius: 24px;
-  padding: 8px;
+  border-radius: 1.5rem;
+  padding: 0.5rem;
 }
 
 .body {
