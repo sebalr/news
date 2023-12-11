@@ -2,7 +2,7 @@
 
 article {
   border-radius: 1.5rem;
-  background-color: white;
+  background-color: colors.$background--main;
   cursor: pointer;
 }
 
@@ -10,8 +10,13 @@ article {
   display: flex;
   flex-direction: column;
   height: 35rem;
-  background-color: colors.$primary--transparent;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    180deg,
+    colors.$primary--transparent 50%,
+    colors.$background--main 100%
+  );
+  box-shadow: colors.$shadow--main;
 }
 
 .img-container {
@@ -33,7 +38,7 @@ img {
   height: 60%;
   z-index: 2;
   padding: 0.5rem 1rem 1rem 1rem;
-  background-color: white;
+  background-color: colors.$background--main;
   border-radius: 24px;
   overflow: hidden;
   display: flex;
@@ -50,7 +55,7 @@ img {
     bottom: 0;
     height: 1rem;
     display: block;
-    background-color: white;
+    background-color: colors.$background--main;
   }
   word-break: break-all;
 }

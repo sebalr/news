@@ -1,6 +1,45 @@
-$primary: #6c63ff;
-$primary--transparent: #6c63ff1a;
+:root {
+  --background--main: white;
+  --shadow--main: rgb(20 21 22 / 50%) 0px 0.5rem 1rem;
 
-$secondary: #6c63ff;
+  --font-color: #6e6e6e;
+  --font-color--darken: #3b3b3b;
 
-$grey: #6e6e6e;
+  --primary-color: #6c63ff;
+  --primary-color--transparent: #6c63ff1a;
+  --primary-contrast: white;
+
+  --secondary-color: #6c63ff;
+  --secondary-color--transparent: #6c63ff1a;
+  --secondary-contrast: white;
+}
+
+[data-theme="dark"] {
+  --background--main: #3e37bf;
+  --shadow--main: rgb(20 21 22 / 50%) 0px 0.5rem 1rem;
+
+  --font-color: #f7f0ff;
+  --font-color--darken: #fbf7ff;
+
+  --primary-color: #a791ff;
+  --primary-color--transparent: #e8d9ff;
+  --primary-contrast: #0a084a;
+
+  --secondary-color: #a791ff;
+  --secondary-color--transparent: #e8d9ff;
+  --secondary-contrast: #0a084a;
+}
+
+$background--main: #{var(--background--main)};
+$shadow--main: #{var(--shadow--main)};
+
+$primary: #{var(--primary-color)};
+$primary--transparent: #{var(--primary-color--transparent)};
+$primary--contrast: #{var(--primary-contrast)};
+
+$secondary: #{var(--secondary-color)};
+$secondary--transparent: #{var(--secondary-color--transparent)};
+$secondary--contrast: #{var(--secondary-contrast)};
+
+$font-color: #{var(--font-color)};
+$font-color--darken: #{var(--font-color--darken)};

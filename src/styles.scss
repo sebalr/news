@@ -5,11 +5,12 @@
 
 html {
   font-family: "Hedvig Letters Sans", sans-serif;
-  color: colors.$grey;
+  color: colors.$font-color;
 }
 
 body {
   overflow: hidden;
+  background-color: colors.$background--main;
 }
 
 h1,
@@ -18,6 +19,6 @@ h3,
 h4,
 h5,
 h6 {
-  color: darken($color: colors.$grey, $amount: 20%);
+  color: colors.$font-color--darken;
   line-height: 1.4;
 }
