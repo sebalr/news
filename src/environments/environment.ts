@@ -1,3 +1,3 @@
 export const environment = {
-  NEWS_API: 'a83849b3c7ae4f77929c417fd8187298'
+  NEWS_API: '8ab9f6a80b5241b4ba7f0b3938ea683e'
 };
