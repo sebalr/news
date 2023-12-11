@@ -21,4 +21,18 @@ describe('ThemeSwitcherComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should call service on setDarkTheme', () => {
+    component.setDarkTheme();
+
+    expect(mockThemeService.setDarkTheme).toHaveBeenCalledTimes(1);
+    expect(mockThemeService.setLightTheme).not.toHaveBeenCalled();
+  });
+
+  it('should call service on setLightTheme', () => {
+    component.setLightTheme();
+
+    expect(mockThemeService.setLightTheme).toHaveBeenCalledTimes(1);
+    expect(mockThemeService.setDarkTheme).not.toHaveBeenCalled();
+  });
 });
