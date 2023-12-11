@@ -8,7 +8,14 @@
     />
   </div>
   <ng-template #loading>
-    <div *ngIf="!data.error">Loading</div>
+    <div class="news-grid" *ngIf="!data.error">
+      <app-loader-shimmer-card class="loader"></app-loader-shimmer-card>
+      <app-loader-shimmer-card class="loader"></app-loader-shimmer-card>
+      <app-loader-shimmer-card class="loader"></app-loader-shimmer-card>
+      <app-loader-shimmer-card class="loader"></app-loader-shimmer-card>
+      <app-loader-shimmer-card class="loader"></app-loader-shimmer-card>
+      <app-loader-shimmer-card class="loader"></app-loader-shimmer-card>
+    </div>
     <app-warning-card
       *ngIf="data.error"
       [message]="data.error"

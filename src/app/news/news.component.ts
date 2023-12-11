@@ -6,11 +6,12 @@ import { Article } from 'src/app/news/interfaces/article.interface';
 import { ArticleThumbnailComponent } from 'src/app/news/article-thumbnail/article-thumbnail.component';
 import { HeaderService } from 'src/app/core/header/header.service';
 import { WarningCardComponent } from 'src/app/shared/components/warning-card/warning-card.component';
+import { LoaderShimmerCardComponent } from 'src/app/shared/components/loader-shimmer-card/loader-shimmer-card.component';
 
 @Component({
   selector: 'app-news',
   standalone: true,
-  imports: [CommonModule, ArticleThumbnailComponent, WarningCardComponent],
+  imports: [CommonModule, ArticleThumbnailComponent, WarningCardComponent, LoaderShimmerCardComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './news.component.html',
   styleUrls: ['./news.component.scss']
