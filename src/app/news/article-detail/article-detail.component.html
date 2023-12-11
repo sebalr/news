@@ -22,5 +22,9 @@
       </section>
     </article>
   </ng-container>
-  <ng-template #errorMessage> Missing article, please go back </ng-template>
+  <ng-template #errorMessage>
+    <app-warning-card
+      message=" Missing article, please go back."
+    ></app-warning-card>
+  </ng-template>
 </div>

@@ -5,11 +5,12 @@ import { Observable, catchError, ignoreElements, of } from 'rxjs';
 import { Article } from 'src/app/news/interfaces/article.interface';
 import { ArticleThumbnailComponent } from 'src/app/news/article-thumbnail/article-thumbnail.component';
 import { HeaderService } from 'src/app/core/header/header.service';
+import { WarningCardComponent } from 'src/app/shared/components/warning-card/warning-card.component';
 
 @Component({
   selector: 'app-news',
   standalone: true,
-  imports: [CommonModule, ArticleThumbnailComponent],
+  imports: [CommonModule, ArticleThumbnailComponent, WarningCardComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './news.component.html',
   styleUrls: ['./news.component.scss']

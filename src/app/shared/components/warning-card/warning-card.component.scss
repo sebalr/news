@@ -1,0 +1,18 @@
+@use "src/assets/styles/colors";
+
+.card {
+  color: colors.$warning;
+  border-radius: 2rem;
+  border: 2px solid colors.$warning;
+  box-shadow: colors.$shadow--main;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+svg {
+  fill: colors.$warning;
+  height: 3rem;
+  width: 3rem;
+}

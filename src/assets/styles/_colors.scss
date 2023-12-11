@@ -13,6 +13,9 @@
   --secondary-color: #6c63ff;
   --secondary-color--transparent: #6c63ff1a;
   --secondary-contrast: white;
+
+  --warning-color: #ff9966;
+  --warning-contrast: white;
 }
 
 [data-theme="dark"] {
@@ -44,6 +47,9 @@ $primary--contrast: #{var(--primary-contrast)};
 $secondary: #{var(--secondary-color)};
 $secondary--transparent: #{var(--secondary-color--transparent)};
 $secondary--contrast: #{var(--secondary-contrast)};
+
+$warning: #{var(--warning-color)};
+$warning--contrast: #{var(--warning-contrast)};
 
 $font-color: #{var(--font-color)};
 $font-color--darken: #{var(--font-color--darken)};

@@ -4,11 +4,12 @@ import { NewsService } from 'src/app/news/news.service';
 import { HeaderService } from 'src/app/core/header/header.service';
 import { DEFAULT_IMAGE } from 'src/app/shared/constants';
 import { PillComponent } from 'src/app/shared/components/pill/pill.component';
+import { WarningCardComponent } from 'src/app/shared/components/warning-card/warning-card.component';
 
 @Component({
   selector: 'app-article-detail',
   standalone: true,
-  imports: [CommonModule, NgOptimizedImage, PillComponent],
+  imports: [CommonModule, NgOptimizedImage, PillComponent, WarningCardComponent],
   templateUrl: './article-detail.component.html',
   styleUrls: ['./article-detail.component.scss']
 })

@@ -9,8 +9,9 @@
   </div>
   <ng-template #loading>
     <div *ngIf="!data.error">Loading</div>
-    <div *ngIf="data.error">
-      {{ data.error }}
-    </div>
+    <app-warning-card
+      *ngIf="data.error"
+      [message]="data.error"
+    ></app-warning-card>
   </ng-template>
 </ng-container>
