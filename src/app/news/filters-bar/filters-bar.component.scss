@@ -1,0 +1,17 @@
+@use "src/assets/styles/colors";
+
+.input-group {
+  position: relative;
+}
+
+svg {
+  fill: colors.$primary;
+  position: absolute;
+  width: 1rem;
+  height: 1rem;
+  position: absolute;
+  right: 1rem;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}

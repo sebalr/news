@@ -1,11 +1,22 @@
+@use "src/assets/styles/colors";
+
 :host {
   height: 100vh;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: auto 1fr auto;
+  grid-template-rows: 3rem 1fr auto;
 }
 
 main {
   padding: 2rem;
   overflow: auto;
+}
+
+header {
+  height: 3rem;
+  z-index: 5;
+  box-shadow: 0 0.5rem 1rem -1rem colors.$primary;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
