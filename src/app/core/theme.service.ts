@@ -1,13 +1,19 @@
 import { DOCUMENT } from '@angular/common';
-import { Inject, Injectable } from '@angular/core';
+import { Inject, Injectable, effect, signal } from '@angular/core';
 import { DATA_THEME } from 'src/app/shared/constants';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ThemeService {
+  private currentTheme = signal<'light' | 'dark'>('light');
+  public $currentTheme = this.currentTheme.asReadonly();
 
-  constructor(@Inject(DOCUMENT) private document: Document) { }
+  constructor(@Inject(DOCUMENT) private document: Document) {
+    effect(() => {
+      localStorage.setItem(DATA_THEME, this.$currentTheme());
+    });
+  }
 
   public loadInitialTheme(): void {
     const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
@@ -22,10 +28,11 @@ export class ThemeService {
 
   public setDarkTheme(): void {
     this.document.documentElement.setAttribute(DATA_THEME, 'dark');
+    this.currentTheme.set('dark');
   }
 
   public setLightTheme(): void {
     this.document.documentElement.removeAttribute(DATA_THEME);
-
+    this.currentTheme.set('light');
   }
 }

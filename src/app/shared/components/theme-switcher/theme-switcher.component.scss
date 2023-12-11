@@ -1,0 +1,13 @@
+@use "src/assets/styles/colors";
+
+:host {
+  position: absolute;
+  right: 1rem;
+}
+
+svg {
+  height: 2rem;
+  width: 2rem;
+  cursor: pointer;
+  fill: colors.$primary;
+}
