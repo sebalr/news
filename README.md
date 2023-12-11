@@ -12,7 +12,7 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 
 Run `npm run docker:build` to build the project docker image.
 
-Run `npm run docker:run` to start previously built docker image.
+Run `npm run docker:run` to start previously built docker image. The script will run on port 8080-
 
 ## Running unit tests
 
