@@ -12,5 +12,4 @@ import { FooterComponent } from 'src/app/core/footer/footer.component';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'news';
 }
