@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ThemeSwitcherComponent } from './theme-switcher.component';
+import { mockThemeService } from 'src/app/mocks/services';
+import { ThemeService } from 'src/app/core/theme.service';
 
 describe('ThemeSwitcherComponent', () => {
   let component: ThemeSwitcherComponent;
@@ -8,7 +10,8 @@ describe('ThemeSwitcherComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [ThemeSwitcherComponent]
+      imports: [ThemeSwitcherComponent],
+      providers: [{ provide: ThemeService, useValue: mockThemeService }]
     });
     fixture = TestBed.createComponent(ThemeSwitcherComponent);
     component = fixture.componentInstance;

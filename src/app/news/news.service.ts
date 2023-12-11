@@ -27,6 +27,11 @@ export class NewsService {
     this.router.navigate(['detail']);
   }
 
+
+  public updateNews(filters: Filters | null): void {
+    this.filters.next(filters);
+  }
+
   private initArticles() {
     this.articles$ = this.filters.pipe(
       startWith(null),
@@ -49,9 +54,4 @@ export class NewsService {
       shareReplay(1),
     );
   }
-
-  public updateNews(filters: Filters | null): void {
-    this.filters.next(filters);
-  }
-
 }
