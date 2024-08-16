@@ -4,18 +4,21 @@ on:
   workflow_dispatch:
     inputs:
       branch:
-        description: "Branch to deploy"
+        description: "Branch to deploy (master won't work)"
         required: true
         default: "dev"
+env:
+  APPSETTINGS_PATH: "src/manifest.webmanifest.2"
 
 jobs:
   deploy:
-    if: ${{github.event.workflow_run.head_branch != 'main' }}
+    environment: Preview
+    if: ${{ github.event.workflow_run.head_branch != 'main' }}
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           ref: ${{ github.event.inputs.branch }}
 
@@ -23,3 +26,5 @@ jobs:
         run: |
           # Replace with your deployment commands
           echo "Deploying to QA environment from branch: ${{ github.event.inputs.branch }}"
+          echo "${{ secrets.APPSETTINGS_PROD }}" > ${{ env.APPSETTINGS_PATH }}
+          head -n 2 ${{ env.APPSETTINGS_PATH }}
